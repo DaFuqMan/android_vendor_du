@@ -2,7 +2,7 @@
 DU_BASE_VERSION = v12.3
 
 ifndef DU_BUILD_TYPE
-    DU_BUILD_TYPE := UNOFFICIAL
+    DU_BUILD_TYPE := MOD
 endif
 
 # Only include DU-Updater for official, weeklies, and rc builds
@@ -20,7 +20,7 @@ endif
 DATE := $(shell date -u +%Y%m%d)
 DU_VERSION := $(TARGET_PRODUCT)-$(DU_BASE_VERSION)-$(DATE)-$(shell date -u +%H%M)-$(DU_BUILD_TYPE)
 
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
     ro.du.version=$(DU_VERSION) \
     ro.mod.version=$(DU_BUILD_TYPE)-$(DU_BASE_VERSION)-$(DATE)
